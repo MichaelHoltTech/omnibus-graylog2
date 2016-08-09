@@ -11,6 +11,7 @@ default['graylog']['rotation_size'] = 1073741824
 default['graylog']['rotation_time'] = 0
 default['graylog']['indices'] = 10
 default['graylog']['journal_size'] = 1
+default['graylog']['mongodb_uri'] = "127.0.0.1:27017"
 
 default['graylog']['user']['username'] = "graylog"
 default['graylog']['user']['group'] = "graylog"

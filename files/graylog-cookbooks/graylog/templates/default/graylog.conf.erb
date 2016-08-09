@@ -263,7 +263,7 @@ alert_check_interval = <%= node['graylog']['graylog-server']['alert_check_interv
 # shutdown_timeout = 30000
 
 # MongoDB Configuration
-mongodb_uri = mongodb://<%= @mongo_server %>:27017/graylog
+mongodb_uri = mongodb://<%= @mongo_server %>/graylog
 
 # Raise this according to the maximum connections your MongoDB server can handle if you encounter MongoDB connection problems.
 mongodb_max_connections = 100
