@@ -21,7 +21,6 @@ default['graylog']['user']['home'] = "/var/opt/graylog"
 default['graylog']['user']['git_user_name'] = "Graylog"
 default['graylog']['user']['git_user_email'] = "graylog@#{node['fqdn']}"
 
-
 default['graylog']['elasticsearch']['enable'] = true
 default['graylog']['elasticsearch']['memory'] = nil # defaults to 60% of VM memory
 default['graylog']['elasticsearch']['log_directory'] = "/var/log/graylog/elasticsearch"

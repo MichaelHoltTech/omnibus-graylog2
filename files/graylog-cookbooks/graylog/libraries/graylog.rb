@@ -151,7 +151,6 @@ module Graylog
       Graylog['rest_transport_uri'] ||= false
       Graylog['external_rest_uri']  ||= false
 
-
       if Graylog['current_address'] == '127.0.0.1'
         Chef::Application.fatal!("eth0 is down! Can not reconfigure Graylog.")
       end
