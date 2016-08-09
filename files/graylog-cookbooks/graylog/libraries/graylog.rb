@@ -149,8 +149,7 @@ module Graylog
       Graylog['rest_listen_uri']    ||= false
       Graylog['rest_transport_uri'] ||= false
       Graylog['external_rest_uri']  ||= false
-      GrayLog['mongodb_uri']        = GrayLog[:node]['graylog']['mongodb_uri'] if GrayLog['mongodb_uri'].empty?
-
+      GrayLog['mongodb_uri'] = GrayLog['master_node'] + ":27017" if GrayLog['mongodb_uri'].empty?
 
       if Graylog['current_address'] == '127.0.0.1'
         Chef::Application.fatal!("eth0 is down! Can not reconfigure Graylog.")
@@ -164,7 +163,7 @@ module Graylog
           client.delete("/elasticsearch/#{Graylog['last_address']}") if client.exists?("/elasticsearch/#{Graylog['last_address']}")
         rescue Exception => e
 	        Chef::Application.fatal!("Can not reach master server, make sure #{Graylog['master_node']} is reachable and 'etcd' service is running properly.")
-	      end
+        end
         Graylog['last_address'] = Graylog['current_address']
       end
 
@@ -193,6 +192,7 @@ module Graylog
               'rest_listen_uri' => Graylog['rest_listen_uri'],
               'rest_transport_uri' => Graylog['rest_transport_uri'],
               'external_rest_uri' => Graylog['external_rest_uri'],
+              'mongodb_uri' => GrayLog['mongodb_uri'],
               'custom_attributes' => Graylog['custom_attributes']
             })
           )
