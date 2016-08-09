@@ -17,7 +17,7 @@ add_command 'reconfigure-as-datanode', 'Run Elasticsearch on this node only', 1 
 
     existing_services['etcd']['enabled']            = false
     existing_services['nginx']['enabled']           = false
-    existing_services['mongodb']['enabled']         = false
+    existing_services['mongodb']['enabled']         = true
     existing_services['elasticsearch']['enabled']   = true
     existing_services['graylog_server']['enabled']  = false
 
