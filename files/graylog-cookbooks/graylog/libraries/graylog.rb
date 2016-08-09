@@ -138,6 +138,7 @@ module Graylog
       Graylog['smtp_no_tls']        ||= false
       Graylog['smtp_no_ssl']        ||= false
       Graylog['master_node']        ||= '127.0.0.1'
+      Graylog['master_node']        ||= '127.0.0.1:27017'
       Graylog['local_connect']      = false if Graylog['local_connect'].nil?
       Graylog['current_address']    = Graylog[:node][:ipaddress]
       Graylog['last_address']       ||= Graylog['current_address']
@@ -149,7 +150,7 @@ module Graylog
       Graylog['rest_listen_uri']    ||= false
       Graylog['rest_transport_uri'] ||= false
       Graylog['external_rest_uri']  ||= false
-      GrayLog['mongodb_uri'] = GrayLog['master_node'] + ":27017" if GrayLog['mongodb_uri'].empty?
+
 
       if Graylog['current_address'] == '127.0.0.1'
         Chef::Application.fatal!("eth0 is down! Can not reconfigure Graylog.")
@@ -181,6 +182,7 @@ module Graylog
               'smtp_no_tls' => Graylog['smtp_no_tls'],
               'smtp_no_ssl' => Graylog['smtp_no_ssl'],
               'master_node' => Graylog['master_node'],
+              'mongodb_uri' => Graylog['mongodb_uri'],
               'local_connect' => Graylog['local_connect'],
               'current_address' => Graylog['current_address'],
               'last_address' => Graylog['last_address'],
@@ -192,7 +194,6 @@ module Graylog
               'rest_listen_uri' => Graylog['rest_listen_uri'],
               'rest_transport_uri' => Graylog['rest_transport_uri'],
               'external_rest_uri' => Graylog['external_rest_uri'],
-              'mongodb_uri' => GrayLog['mongodb_uri'],
               'custom_attributes' => Graylog['custom_attributes']
             })
           )

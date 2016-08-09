@@ -11,6 +11,7 @@ default['graylog']['rotation_size'] = 1073741824
 default['graylog']['rotation_time'] = 0
 default['graylog']['indices'] = 10
 default['graylog']['journal_size'] = 1
+
 default['graylog']['user']['username'] = "graylog"
 default['graylog']['user']['group'] = "graylog"
 default['graylog']['user']['uid'] = nil
@@ -19,6 +20,7 @@ default['graylog']['user']['shell'] = "/bin/sh"
 default['graylog']['user']['home'] = "/var/opt/graylog"
 default['graylog']['user']['git_user_name'] = "Graylog"
 default['graylog']['user']['git_user_email'] = "graylog@#{node['fqdn']}"
+
 
 default['graylog']['elasticsearch']['enable'] = true
 default['graylog']['elasticsearch']['memory'] = nil # defaults to 60% of VM memory
