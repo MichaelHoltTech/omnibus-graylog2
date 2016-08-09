@@ -138,7 +138,7 @@ module Graylog
       Graylog['smtp_no_tls']        ||= false
       Graylog['smtp_no_ssl']        ||= false
       Graylog['master_node']        ||= '127.0.0.1'
-      Graylog['master_node']        ||= '127.0.0.1:27017'
+      Graylog['mongodb_uri']        ||= '127.0.0.1:27017'
       Graylog['local_connect']      = false if Graylog['local_connect'].nil?
       Graylog['current_address']    = Graylog[:node][:ipaddress]
       Graylog['last_address']       ||= Graylog['current_address']
