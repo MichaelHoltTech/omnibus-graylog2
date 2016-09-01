@@ -53,6 +53,7 @@ default['graylog']['etcd']['data_directory'] = "/var/opt/graylog/data/etcd"
 
 default['graylog']['graylog-server']['enable'] = true
 default['graylog']['graylog-server']['memory'] = "1500m"
+default['graylog']['graylog-server']['java_opts'] = nil
 default['graylog']['graylog-server']['log_directory'] = "/var/log/graylog/server"
 default['graylog']['graylog-server']['journal_directory'] = "/var/opt/graylog/data/journal"
 default['graylog']['graylog-server']['node_id'] = "/var/opt/graylog/graylog-server-node-id"
@@ -61,7 +62,7 @@ default['graylog']['graylog-server']['plugin_dir'] = "/opt/graylog/plugin"
 default['graylog']['graylog-server']['content_packs_loader_enabled'] = true
 default['graylog']['graylog-server']['content_packs_dir'] = "/opt/graylog/contentpacks"
 default['graylog']['graylog-server']['content_packs_auto_load'] = "grok-patterns.json,content_pack_appliance.json"
-default['graylog']['graylog-server']['rest_listen_uri'] = "http://0.0.0.0:12900/"
+default['graylog']['graylog-server']['rest_listen_uri'] = "http://0.0.0.0:9000/api"
 default['graylog']['graylog-server']['web_listen_uri'] = "http://0.0.0.0:9000/"
 default['graylog']['graylog-server']['retention_strategy'] = "delete"
 default['graylog']['graylog-server']['elasticsearch_shards'] = 4
